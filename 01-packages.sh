@@ -32,3 +32,5 @@ WorkingDirectory=/opt/metabase/
 [Install]
 WantedBy=multi-user.target' | tee -a /etc/systemd/system/metabase.service
 
+# activate servoce
+systemctl enable metabase && systemctl start metabase
