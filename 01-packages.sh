@@ -25,7 +25,7 @@ printf '[Unit]
 Description=Metabase
 
 [Service]
-ExecStart="java -jar metabase.jar"
+ExecStart=/opt/metabase/metabase.sh
 Restart=on-abnormal
 WorkingDirectory=/opt/metabase/
 
