@@ -18,8 +18,8 @@ chmod 775 /opt/metabase/metabase.jar
 # create service
 printf '#!/bin/bash
 java -jar /opt/metabase/metabase.jar' | tee -a /opt/metabase/metabase.sh
-chmod +x metabase.sh
-chmod 775 metabase.sh
+chmod +x /opt/metabase/metabase.sh
+chmod 775 /opt/metabase/metabase.sh
 
 printf '[Unit]
 Description=Metabase
@@ -32,5 +32,5 @@ WorkingDirectory=/opt/metabase/
 [Install]
 WantedBy=multi-user.target' | tee -a /etc/systemd/system/metabase.service
 
-# activate servoce
+# activate service
 systemctl enable metabase && systemctl start metabase
