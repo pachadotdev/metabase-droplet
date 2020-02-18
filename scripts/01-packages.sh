@@ -10,7 +10,7 @@ apt-get -y autoclean
 apt-get install -y default-jdk
 
 # download and set permission for metabase
-wget http://downloads.metabase.com/v0.32.10/metabase.jar
+wget http://downloads.metabase.com/v0.34.2/metabase.jar
 mkdir /opt/metabase/
 mv metabase.jar /opt/metabase/metabase.jar
 chmod 775 /opt/metabase/metabase.jar
@@ -34,3 +34,9 @@ WantedBy=multi-user.target' | tee -a /etc/systemd/system/metabase.service
 
 # activate service
 systemctl enable metabase && systemctl start metabase
+
+# open ports
+ufw allow http
+ufw allow https
+ufw allow ssh
+ufw allow 3000
