@@ -10,7 +10,7 @@ apt-get -y autoclean
 apt-get install -y default-jdk
 
 # download and set permission for metabase
-wget http://downloads.metabase.com/v0.34.2/metabase.jar
+wget http://downloads.metabase.com/v0.49.6/metabase.jar
 mkdir /opt/metabase/
 mv metabase.jar /opt/metabase/metabase.jar
 chmod 775 /opt/metabase/metabase.jar
